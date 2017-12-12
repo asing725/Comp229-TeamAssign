@@ -11,7 +11,7 @@ namespace Comp229_TeamAssign
 {
 
 
-    public partial class About
+    public partial class Order
     {
     }
 }

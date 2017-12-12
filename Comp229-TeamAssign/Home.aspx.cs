@@ -7,7 +7,7 @@ using System.Web.UI.WebControls;
 
 namespace Comp229_TeamAssign
 {
-    public partial class _Default : Page
+    public partial class Home : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
