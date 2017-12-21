@@ -11,12 +11,16 @@
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
     </asp:PlaceHolder>
-
+     <link href="/content/style1.css" rel="stylesheet" type="text/css">
     <webopt:bundlereference runat="server" path="~/Content/css" />
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-
+    
 </head>
-<body>
+<body  >
+    <div class="container">
+     <div class="jumbotron" >
+         </div>
+        
     <form runat="server">
         <asp:ScriptManager runat="server">
             <Scripts>
@@ -39,24 +43,35 @@
             </Scripts>
         </asp:ScriptManager>
 
-        <div class="navbar navbar-inverse navbar-fixed-top">
-            <div class="container">
+        <div class="navbar navbar-inverse " >
+           
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
+                      
                     </button>
                     <a class="navbar-brand" runat="server" href="~/">Application name</a>
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
-                        <li><a runat="server" href="~/">Home</a></li>
-                        <li><a runat="server" href="~/About">About</a></li>
-                        <li><a runat="server" href="~/Contact">Contact</a></li>
+                        <li><a runat="server" href="~/Home.aspx">Home</a></li>
+                        <li><a runat="server" href="~/Books.aspx">Books</a></li>
+
                     </ul>
+                    <asp:LoginView runat="server" ViewStateMode="Disabled">
+                        <AnonymousTemplate>
+                            <ul class="nav navbar-nav navbar-right">
+                                <li><a runat="server" href="~/Signup.aspx">Sign up</a></li>
+                                <li><a runat="server" href="~/Login.aspx">Log in</a></li>
+                            </ul>
+                        </AnonymousTemplate>
+                        
+                        </asp:LoginView>
+                    </div>
                 </div>
             </div>
+         <div class="container speacial">
         </div>
         <div class="container body-content">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">

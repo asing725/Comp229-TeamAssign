@@ -1,0 +1,9 @@
+﻿/* Custom style sheet */
+
+.jumbotron {
+    background-image: url("/Assets/images/Banner.jpg");
+    height: "100%";
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    
+}
+
