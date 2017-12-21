@@ -33,7 +33,7 @@
         </p>
      <p>
         Purchase Date :<br />
-        <asp:TextBox ID="purchaseDate" TextMode="Date" runat="server"  ErrorMessage="*"
+        <asp:TextBox ID="purchaseDateTextBox" TextMode="Date" runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
   

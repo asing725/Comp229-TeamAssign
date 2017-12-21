@@ -49,13 +49,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox languageTextBox;
         
         /// <summary>
-        ///  statusTextBox control.
+        /// statusTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox  statusTextBox;
+        protected global::System.Web.UI.WebControls.TextBox statusTextBox;
         
         /// <summary>
         /// publisherTextBox control.
@@ -67,13 +67,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox publisherTextBox;
         
         /// <summary>
-        /// purchaseDate control.
+        /// purchaseDateTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox purchaseDate;
+        protected global::System.Web.UI.WebControls.TextBox purchaseDateTextBox;
         
         /// <summary>
         /// addNewBook control.
