@@ -14,10 +14,12 @@ namespace Comp229_TeamAssign
         private SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
+            //
          //   displaytrackitem();
+
         }
 
-        private void displaytrackitem()
+        private void displayowneditem()
         {
 
             SqlCommand comm = new SqlCommand("Select * from ;", con);  //update commnd after adding database
@@ -25,6 +27,16 @@ namespace Comp229_TeamAssign
             SqlDataReader reader = comm.ExecuteReader();
             Gviewtrack.DataSource = reader;
             Gviewtrack.DataBind();
+            con.Close();
+        }
+        private void displaytrackitem()
+        {
+
+            SqlCommand comm = new SqlCommand("Select * from ;", con);  //update commnd after adding database
+            con.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+            GviewOwnd.DataSource = reader;
+            GviewOwnd.DataBind();
             con.Close();
         }
     }

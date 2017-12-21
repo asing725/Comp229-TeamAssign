@@ -6,7 +6,7 @@
 <head runat="server">
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%: Page.Title %> - My ASP.NET Application</title>
+    <title><%: Page.Title %> - AA Library</title>
 
     <asp:PlaceHolder runat="server">
         <%: Scripts.Render("~/bundles/modernizr") %>
@@ -17,11 +17,13 @@
     
 </head>
 <body  >
-    <div class="container">
-     <div class="jumbotron" >
-         </div>
-        
+   
+       
     <form runat="server">
+         <div class="container">
+     <div class="jumbotron" style="margin-bottom:0px">
+         <h1>AA Library</h1>
+         </div>
         <asp:ScriptManager runat="server">
             <Scripts>
                 <%--To learn more about bundling scripts in ScriptManager see https://go.microsoft.com/fwlink/?LinkID=301884 --%>
@@ -51,7 +53,7 @@
                         <span class="icon-bar"></span>
                       
                     </button>
-                    <a class="navbar-brand" runat="server" href="~/">Application name</a>
+                   
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
@@ -78,10 +80,11 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - My ASP.NET Application</p>
+                <marquee><p>&copy; <%: DateTime.Now.Year %> - AA - Library - Toronto</p></marquee>
             </footer>
         </div>
 
-    </form>
+    
+</form>    
 </body>
 </html>
