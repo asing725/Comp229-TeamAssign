@@ -13,12 +13,12 @@ namespace Comp229_TeamAssign {
     public partial class Books {
         
         /// <summary>
-        /// GviewHome control.
+        /// Gviewtrack control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GviewHome;
+        protected global::System.Web.UI.WebControls.GridView Gviewtrack;
     }
 }
