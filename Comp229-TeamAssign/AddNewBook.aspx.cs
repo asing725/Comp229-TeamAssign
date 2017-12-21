@@ -21,7 +21,7 @@ namespace Comp229_TeamAssign
 
         protected void cancelAddNewBoook_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("");
         }
     }
 }
