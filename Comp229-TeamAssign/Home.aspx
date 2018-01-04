@@ -3,7 +3,11 @@
 
     <div class="row">
          <div class="col-sm-6 ">
-            <h3>Our collection:</h3>
+             <div class="panel panel-default">
+            <div class="panel-heading">
+                            <h1 class="panel-title"><i class="fa fa-user-plus fa-lg"></i> Our collection </h1>
+                    </div>
+                  <div class="panel-body">
              <asp:GridView ID="GviewHome" runat="server" AutoGenerateColumns="false"  DataKeyField="name" >
              <Columns>
                          
@@ -13,6 +17,8 @@
            </Columns>
         </asp:GridView>
             </div>
+                 </div>
+             </div>
         </div>
     <div class="row">
         <div class="col-sm-3 ">

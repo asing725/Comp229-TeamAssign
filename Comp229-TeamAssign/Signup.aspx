@@ -30,15 +30,15 @@
                         </div>
 
                         <div class="form-group">
-                            <label class="control-label">Confirm:</label>
+                            <label class="control-label">Confirm Password:</label>
                             <asp:TextBox runat="server" TextMode="Password" CssClass="form-control" ID="cpasstxt" placeholder="Confirm Password" required="true"></asp:TextBox>
                             <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal"  ControlToValidate="ConfirmPasswordTextBox" runat="server"
                                 ControlToCompare="PasswordTextBox" CssClass="label label-danger" />
                         </div>
 
                         <div class="text-right">
-                            <asp:Button Text="Cancel" ID="CancelButton" runat="server" CssClass="btn btn-warning"  UseSubmitBehavior="false" CausesValidation="false" />
-                            <asp:Button Text="Register" ID="RegisterButton" runat="server" CssClass="btn btn-primary"  TabIndex="0" />
+                            <asp:Button Text="Cancel" ID="CancelButton" runat="server" CssClass="btn btn-warning"  UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />
+                            <asp:Button Text="Register" ID="RegisterButton" runat="server" CssClass="btn btn-primary"  TabIndex="0" OnClick="RegisterButton_Click" />
                         </div>
                    
             </div>
