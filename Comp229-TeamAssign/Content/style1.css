@@ -1,9 +1,54 @@
 ﻿/* Custom style sheet */
 
+
+
 .jumbotron {
-    background-image: url("/Assets/images/Banner.jpg");
-    height: "100%";
-    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
+    background-color: #f4511e;
+    color: #ffffff;
+    padding: 95px 24px;
+    font-family: Montserrat, sans-serif;
+}
+
+.navbar {
+    margin-bottom: 0;
+    background-color: #f4511e;
+    z-index: 9999;
+    border: 0;
+    font-size: 13px;
+    line-height: 1.43;
+    letter-spacing: 4px;
+    border-radius: 0;
+}
+
+    .navbar li a, .navbar .navbar-brand {
+        color: #fff;
+    }
+
+.navbar-nav li a:hover, .navbar-nav li.active a {
+    color: #f4511e;
+    background-color: #fff;
+}
+
+.navbar-default .navbar-toggle {
+    border-color: transparent;
+    color: #fff;
+}
+
+.panel {
+    border: 1px solid #f4511e;
+    border-radius: 0;
+    transition: box-shadow 0.5s;
     
+}
+
+.panel-heading {
+    color: #fff !important;
+    background-color: #f4511e !important;
+    padding: 25px;
+    border-bottom: 1px solid transparent;
+    border-top-left-radius: 0px;
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
 }
 

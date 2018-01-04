@@ -13,5 +13,9 @@ namespace Comp229_TeamAssign
         {
 
         }
+        protected void register_Click(object sender, EventArgs e)
+        {
+            Response.Redirect("Signup.aspx");
+        }
     }
 }

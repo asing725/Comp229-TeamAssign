@@ -67,15 +67,6 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.Button logInbtn;
         
         /// <summary>
-        /// errlbl control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Label errlbl;
-        
-        /// <summary>
         /// register control.
         /// </summary>
         /// <remarks>
