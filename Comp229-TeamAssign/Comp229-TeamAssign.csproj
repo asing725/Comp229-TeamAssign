@@ -127,7 +127,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Add.aspx" />
     <Content Include="AddNewBook.aspx" />
     <Content Include="Books.aspx" />
     <Content Include="Content\bootstrap.css" />
@@ -185,13 +184,6 @@
     <Content Include="Site.Mobile.Master" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Add.aspx.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Add.aspx.designer.cs">
-      <DependentUpon>Add.aspx</DependentUpon>
-    </Compile>
     <Compile Include="AddNewBook.aspx.cs">
       <DependentUpon>AddNewBook.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>

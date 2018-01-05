@@ -7,15 +7,11 @@
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
     <p>
-        Book Name :<br />
-        <asp:TextBox ID="bookNameTextBox" runat="server"  ErrorMessage="*"
+        Author :<br />
+        <asp:TextBox ID="authorTextBox" runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add"/>
         </p>
-    <p>
-        Book Format :<br />
-        <asp:TextBox ID="bookFormatTextBox" runat="server"  ErrorMessage="*"
-                            ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
-        </p>
+   
      <p>
         Language :<br />
         <asp:TextBox ID="languageTextBox"  runat="server"  ErrorMessage="*"
@@ -32,8 +28,8 @@
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
      <p>
-        Purchase Date :<br />
-        <asp:TextBox ID="purchaseDateTextBox" TextMode="Date" runat="server"  ErrorMessage="*"
+        Publication Date :<br />
+        <asp:TextBox ID="publicationDateTextBox" TextMode="Date" runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
   

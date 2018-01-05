@@ -22,22 +22,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox ISBNTextBox;
         
         /// <summary>
-        /// bookNameTextBox control.
+        /// authorTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bookNameTextBox;
-        
-        /// <summary>
-        /// bookFormatTextBox control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox bookFormatTextBox;
+        protected global::System.Web.UI.WebControls.TextBox authorTextBox;
         
         /// <summary>
         /// languageTextBox control.
@@ -67,13 +58,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox publisherTextBox;
         
         /// <summary>
-        /// purchaseDateTextBox control.
+        /// publicationDateTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox purchaseDateTextBox;
+        protected global::System.Web.UI.WebControls.TextBox publicationDateTextBox;
         
         /// <summary>
         /// addNewBook control.
