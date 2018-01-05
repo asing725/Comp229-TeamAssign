@@ -10,6 +10,7 @@ namespace Comp229_TeamAssign
 {
     public partial class AddNewBook : System.Web.UI.Page
     {
+        //Database Connection
         private SqlConnection sqlconnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Comp229TeamProject;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
         private String ISBN, BookName, BookFormat, Language, Status, Publisher;
         private DateTime PurchaseDate;
