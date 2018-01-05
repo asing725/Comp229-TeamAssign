@@ -6,23 +6,23 @@ using System.Web.UI;
 using System.Web.UI.WebControls;
 using System.Data;
 using System.Data.SqlClient;
+using System.Web.Security;
 
 namespace Comp229_TeamAssign
 {
     public partial class Books : System.Web.UI.Page
     {
-        private SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True");
+        private SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Comp229TeamAssign;Integrated Security=True");
         protected void Page_Load(object sender, EventArgs e)
         {
-            //
-         //   displaytrackitem();
-
+            displayloaneditem();
+            displaytrackitem();
         }
 
-        private void displayowneditem()
+        private void displayloaneditem()
         {
 
-            SqlCommand comm = new SqlCommand("Select * from ;", con);  //update commnd after adding database
+            SqlCommand comm = new SqlCommand("Select * from[dbo].Books where Status = 'Loaned' ", con);   
             con.Open();
             SqlDataReader reader = comm.ExecuteReader();
             Gviewtrack.DataSource = reader;
@@ -32,7 +32,7 @@ namespace Comp229_TeamAssign
         private void displaytrackitem()
         {
 
-            SqlCommand comm = new SqlCommand("Select * from ;", con);  //update commnd after adding database
+            SqlCommand comm = new SqlCommand("Select * from[dbo].Books", con);
             con.Open();
             SqlDataReader reader = comm.ExecuteReader();
             GviewOwnd.DataSource = reader;

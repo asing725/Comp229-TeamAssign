@@ -13,24 +13,6 @@ namespace Comp229_TeamAssign {
     public partial class Signup {
         
         /// <summary>
-        /// untxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox untxt;
-        
-        /// <summary>
-        /// pntxt control.
-        /// </summary>
-        /// <remarks>
-        /// Auto-generated field.
-        /// To modify move field declaration from designer file to code-behind file.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox pntxt;
-        
-        /// <summary>
         /// etxt control.
         /// </summary>
         /// <remarks>
@@ -38,6 +20,24 @@ namespace Comp229_TeamAssign {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox etxt;
+        
+        /// <summary>
+        /// fntxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox fntxt;
+        
+        /// <summary>
+        /// lntxt control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox lntxt;
         
         /// <summary>
         /// passtxt control.

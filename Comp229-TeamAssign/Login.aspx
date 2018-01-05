@@ -1,6 +1,8 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Login.aspx.cs" Inherits="Comp229_TeamAssign.Login" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
+
+
    <div class="row">
         <div class="col-sm-3 ">
             <div class="panel panel-default">
@@ -14,12 +16,13 @@
                         <asp:RequiredFieldValidator ValidationGroup="login"  ID="requn" runat="server" ControlToValidate="userNtxt"  ErrorMessage="Please enter your username" ></asp:RequiredFieldValidator>
                            </div>
                             <div class="form-group">
-                            <label class="control-label">Username:</label>
+                            <label class="control-label">Password:</label>
                             <asp:TextBox runat="server" CssClass="form-control" ID="passtxt" placeholder="Password" required="true" TextMode="Password" ></asp:TextBox>
                        <asp:RequiredFieldValidator ValidationGroup="login" ID="reqpass" runat="server" ControlToValidate="passtxt"  ErrorMessage="Please enter your password" ></asp:RequiredFieldValidator></th></tr>
                         </div>
                          <div class="form-group">
                              <asp:Button ID="logInbtn" ValidationGroup="login" runat="server" Text="Login" class="btn btn-success" OnClick="logInbtn_Click"  />
+                             &nbsp;
                              </div>
                                       
                             <h1 class="panel-title"><i class="fa fa-user-plus fa-lg"></i> New user ?</h1>
