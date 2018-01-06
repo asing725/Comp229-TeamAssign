@@ -21,12 +21,13 @@ namespace Comp229_TeamAssign
         {
             try
             {
-                SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Library;Integrated Security=True");
-                SqlCommand comm = new SqlCommand("Insert into (UserName,PhoneNum,Email,Password) VALUES(userN, phnNum,emailt, pass", con);
-                comm.Parameters.AddWithValue("userN", untxt.Text);
-                comm.Parameters.AddWithValue("phnNum", pntxt.Text);
-                comm.Parameters.AddWithValue("emailt", etxt.Text);
-                comm.Parameters.AddWithValue("pass", passtxt.Text);
+                SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Comp229TeamAssign;Integrated Security=True");
+                SqlCommand comm = new SqlCommand("Insert into [dbo].Member(LastName,FirstName,Email,Password,UserName) VALUES(@lName,@fmName,@email,@pwd,@user)", con);
+               comm.Parameters.AddWithValue("@user", usrtxt.Text);
+                comm.Parameters.AddWithValue("@fmName", fntxt.Text);
+                comm.Parameters.AddWithValue("@lName", lntxt.Text);
+                comm.Parameters.AddWithValue("@email", etxt.Text);
+                comm.Parameters.AddWithValue("@pwd", passtxt.Text);
                 con.Open();               
                 comm.ExecuteNonQuery();
                 con.Close();

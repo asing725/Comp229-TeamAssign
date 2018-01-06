@@ -10,13 +10,17 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <link href="/content/style1.css" rel="stylesheet" type="text/css"> 
-    <title><%: Page.Title %> - AA Library</title>
+    <title></title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
     
     <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
     
 </head>
 <body  >
+    
+   
     <div class="navbar">
            
                 <div class="navbar-header">
@@ -29,21 +33,34 @@
                 </div>
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav">
+                         <asp:PlaceHolder ID="forguest1" runat="server">
                         <li><a runat="server" href="~/Home.aspx">Home</a></li>
                         <li><a runat="server" href="~/Books.aspx">Books</a></li>
+                        </asp:PlaceHolder>
+                        <asp:PlaceHolder ID="foruser1" runat="server">
+                        <li><a runat="server" href="~/Home.aspx">Home</a></li>
+                        <li><a runat="server" href="~/Books.aspx">Books</a></li>
+                             <li><a runat="server" href="~/AddNewBook.aspx">Add Books</a></li>
+                        </asp:PlaceHolder>
 
                     </ul>
-                    <asp:LoginView runat="server" ViewStateMode="Disabled">
-                        <AnonymousTemplate>
-                            <ul class="nav navbar-nav navbar-right">
-                                <li><a runat="server" href="~/Signup.aspx">Sign up</a></li>
-                                <li><a runat="server" href="~/Login.aspx">Log in</a></li>
-                            </ul>
-                        </AnonymousTemplate>
+                     <ul class="nav navbar-nav navbar-right">
+                     <asp:PlaceHolder ID="forguest" runat="server">
                         
-                        </asp:LoginView>
+                                <li ><a runat="server" href="~/Signup.aspx">Sign up</a></li>
+                               
+                            
+                         </asp:PlaceHolder>
+                     <asp:PlaceHolder ID="foruser" runat="server">
+                         <li ><a runat="server" id="userdisp"></a></li>
+                       <li><a runat="server" href="~/Logout.aspx">Log out</a></li>
+                           </asp:PlaceHolder>
+                                 </ul>
+                            
+                      
                     </div>
                 </div>
+      
    <div class="jumbotron text-center">
   <h1>AA Library</h1>
   <p>We have biggest collection of books!</p>
@@ -78,7 +95,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <marquee><p>&copy; <%: DateTime.Now.Year %> - AA - Library - Toronto</p></marquee>
+                <marquee><p>&copy; <%: DateTime.Now.Year %> - AA - Library - By Arshdeep and Ashish</p></marquee>
             </footer>
         </div>
 
