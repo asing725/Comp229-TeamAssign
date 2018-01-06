@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Books.aspx.cs" Inherits="Comp229_TeamAssign.Books" %>
+﻿<%@ Page Title="Books" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Books.aspx.cs" Inherits="Comp229_TeamAssign.Books" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
     
     
@@ -20,6 +20,7 @@
                   <asp:Label runat="server" Text='<%# Eval("Name") %>'></asp:Label></strong>
               <asp:Image runat="server" class="img-rounded img-responsive" Height="200" ImageUrl='<%#Eval("image")%>' />
               <asp:Label runat="server" Text='<%# Eval("Description") %>'></asp:Label></small>
+                <asp:LinkButton runat="server"  OnCommand="bookdetail_Command"  CssClass="btn-warning" Text="More Details" CommandArgument='<%#Eval("Name")%>'></asp:LinkButton>
                                     </div>
                                 </div>
                             </ItemTemplate>
@@ -45,6 +46,7 @@
                                             <asp:Label runat="server" Text='<%# Eval("Name") %>'></asp:Label></strong>
                                         <asp:Image runat="server" class="img-rounded img-responsive" Height="200" ImageUrl='<%#Eval("image")%>' />
                                         <asp:Label runat="server" Text='<%# Eval("Description") %>'></asp:Label></small>
+                                   <asp:LinkButton runat="server"  OnCommand="bookdetail_Command"  CssClass="btn-warning" Text="More Details" CommandArgument='<%#Eval("Name")%>'></asp:LinkButton>
                                     </div>
                                 </div>
                             </ItemTemplate>

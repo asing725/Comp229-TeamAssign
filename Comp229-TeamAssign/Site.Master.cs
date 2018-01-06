@@ -27,6 +27,33 @@ namespace Comp229_TeamAssign
                 forguest.Visible = true;
                 forguest1.Visible = true;
             }
+           
+                switch (Page.Title)
+                {
+                    case "Home":                      
+                        Page.Title = string.Format("AA Library : Home ");
+                        break;
+                case "Signup":
+                    Page.Title = string.Format("AA Library : Sign up");
+                    break;
+                case "Login":
+                    Page.Title = string.Format("AA Library : Log in");
+                    break;
+                case "AddNewBook":
+                    Page.Title = string.Format("AA Library : Add a new book");
+                    break;
+                case "ItemDetail":
+                    Page.Title = string.Format("AA Library : Book detail");
+                    break;
+                case "Update":
+                    Page.Title = string.Format("AA Library : Update a book");
+                    break;
+                case "Order":
+                    Page.Title = string.Format("AA Library : Loan a book");
+                    break;
+
+
+            }
+            }
         }
     }
-}

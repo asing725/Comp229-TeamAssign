@@ -10,7 +10,7 @@
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
      <link href="/content/style1.css" rel="stylesheet" type="text/css"> 
-    <title><%: Page.Title %> - AA Library</title>
+    <title></title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
 
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
@@ -95,7 +95,7 @@
             </asp:ContentPlaceHolder>
             <hr />
             <footer>
-                <marquee><p>&copy; <%: DateTime.Now.Year %> - AA - Library - Toronto</p></marquee>
+                <marquee><p>&copy; <%: DateTime.Now.Year %> - AA - Library - By Arshdeep and Ashish</p></marquee>
             </footer>
         </div>
 

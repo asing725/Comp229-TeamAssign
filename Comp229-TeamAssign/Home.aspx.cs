@@ -108,6 +108,14 @@ namespace Comp229_TeamAssign
             FormsAuthentication.SignOut();
             Response.Redirect("Home.aspx");
         }
+
+       
+
+        protected void bookdetail_Command(object sender, CommandEventArgs e)
+        {
+                Session["selectedBook"] = e.CommandArgument.ToString();
+                Response.Redirect("ItemDetail.aspx");                   
+        }
     }
     }
     

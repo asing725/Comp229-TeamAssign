@@ -54,5 +54,10 @@ namespace Comp229_TeamAssign
             con.Close();
 
         }
+        protected void bookdetail_Command(object sender, CommandEventArgs e)
+        {
+            Session["selectedBook"] = e.CommandArgument.ToString();
+            Response.Redirect("ItemDetail.aspx");
+        }
     }
 }

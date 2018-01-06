@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Comp229_TeamAssign.Home" %>
+﻿<%@ Page Title="Home" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Home.aspx.cs" Inherits="Comp229_TeamAssign.Home" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="MainContent" runat="server">
 
@@ -18,14 +18,14 @@
                                 <div class="col-sm-5">
                                     <div class="thumbnail">                                    
                                        <strong>   <asp:Label runat="server" Text='<%# Eval("Name") %>'></asp:Label></strong>  
-                                        <asp:Image runat="server" class="img-rounded img-responsive" Height="200" ImageUrl='<%#Eval("image")%>' />
-                                   <asp:Label runat="server" Text='<%# Eval("Description") %>'></asp:Label></small></div>
-                                 
-
+                                        <asp:Image   runat="server" class="img-rounded img-responsive" Height="200" ImageUrl='<%#Eval("image")%>' />
+                                   <asp:Label runat="server" Text='<%# Eval("Description") %>'></asp:Label></small>                   
+                                      <asp:LinkButton runat="server"  OnCommand="bookdetail_Command"  CssClass="btn-warning" Text="More Details" CommandArgument='<%#Eval("Name")%>'></asp:LinkButton>
                                 </div>
-
+                                </div>
                             </ItemTemplate>
                         </asp:Repeater>
+                         
                     </div>
 
                 </div>
