@@ -23,42 +23,45 @@ namespace Comp229_TeamAssign
         {
             Response.Redirect("Signup.aspx");
         }
-
-        
+     
             protected void logInbtn_Click(object sender, EventArgs e)
         {
 
-            SqlCommand usrNme = new SqlCommand("Select EmailAddress FROM [dbo].Member where EmailAddress = @username", con);
-            SqlCommand passwrd = new SqlCommand("Select Password FROM [dbo].Member where EmailAddress = @username", con);
+            SqlCommand usrNme = new SqlCommand("Select UserName FROM [dbo].Member where UserName = @user", con);
+            SqlCommand passwrd = new SqlCommand("Select Password FROM [dbo].Member where UserName = @user", con);
 
-            usrNme.Parameters.Add("@username", SqlDbType.NVarChar);
-            usrNme.Parameters["@username"].Value = userNtxt.Text;
-
-            passwrd.Parameters.Add("@username", SqlDbType.NVarChar);
-            passwrd.Parameters["@username"].Value = userNtxt.Text;
+            usrNme.Parameters.Add("@user", SqlDbType.NVarChar);
+            usrNme.Parameters["@user"].Value = userNtxt.Text;
+            passwrd.Parameters.Add("@user", SqlDbType.NVarChar);
+            passwrd.Parameters["@user"].Value = userNtxt.Text;
 
             try
             {
                 con.Open();
-                string username = usrNme.ExecuteScalar().ToString();
+                string usr = usrNme.ExecuteScalar().ToString();
 
-                if (username != null && String.Equals(username, userNtxt.Text))
+                if (usr != null && String.Equals(usr, userNtxt.Text))
                 {
-                    string password = passwrd.ExecuteScalar().ToString();
+                    string pwd = passwrd.ExecuteScalar().ToString();
 
-                    if (password != null && String.Equals(password, passtxt.Text))
+                    if (pwd != null && String.Equals(pwd, passtxt.Text))
                     {
-                        FormsAuthentication.SetAuthCookie(username, true);
-                        Response.Redirect("~/Home.aspx");
+                        FormsAuthentication.SetAuthCookie(usr, false);
+                       
+                        Session["LoggedUser"] = userNtxt.Text;
+                        Response.Redirect(Convert.ToString(Session["Currentpage"]));
 
                     }
+                    else
+                    {
+                        msgtxt.Text = "Incorrect username or password.";
+                    }
                 }
-               
 
             }
             catch (Exception ex)
             {
-                
+                msgtxt.Text = ex.Message.ToString();
             }
             finally
             {

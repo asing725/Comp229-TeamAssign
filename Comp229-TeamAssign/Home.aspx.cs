@@ -18,20 +18,40 @@ namespace Comp229_TeamAssign
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            Session["Currentpage"] = "~/Home.aspx";
+            notlogged.Visible = true;
+            trackitem();
+            bool logstatus = (HttpContext.Current.User != null) && HttpContext.Current.User.Identity.IsAuthenticated;
            
-            displayitem();  
+            if (Session["LoggedUser"] != null)
+            {
+                notlogged.Visible = false;
+                Username.Text = (string)(Session["LoggedUser"]);
+                loggedin.Visible = true;
+            }
+
+            if (logstatus == true)
+            {
+                notlogged.Visible = false;
+            }
+
         }
 
-       
 
-        private void displayitem()
+        private void trackitem()
         {
 
-            SqlCommand comm = new SqlCommand("Select * from[dbo].Books where Status = 'Loaned' ", con); 
+            SqlCommand comm = new SqlCommand("Select * from[dbo].Books where Status = 'Loaned' ", con);
             con.Open();
             SqlDataReader reader = comm.ExecuteReader();
-            GviewHome.DataSource = reader;
-            GviewHome.DataBind();
+            if (reader.HasRows)
+            {
+                DataTable tabn = new DataTable();
+                tabn.Load(reader);
+                loanedbooks.DataSource = tabn;
+                loanedbooks.DataBind();
+              
+            }
             con.Close();
         }
 
@@ -42,42 +62,51 @@ namespace Comp229_TeamAssign
 
         protected void logInbtn_Click(object sender, EventArgs e)
         {
-            SqlCommand usrNme = new SqlCommand("Select EmailAddress FROM [dbo].Member where EmailAddress = @username", con);
-            SqlCommand passwrd = new SqlCommand("Select Password FROM [dbo].Member where EmailAddress = @username", con);
+            SqlCommand usrNme = new SqlCommand("Select UserName FROM [dbo].Member where UserName = @user", con);
+            SqlCommand passwrd = new SqlCommand("Select Password FROM [dbo].Member where UserName = @user", con);
 
-            usrNme.Parameters.Add("@username", SqlDbType.NVarChar);
-            usrNme.Parameters["@username"].Value = userNtxt.Text;
-
-            passwrd.Parameters.Add("@username", SqlDbType.NVarChar);
-            passwrd.Parameters["@username"].Value = userNtxt.Text;
+            usrNme.Parameters.Add("@user", SqlDbType.NVarChar);
+            usrNme.Parameters["@user"].Value = userNtxt.Text;
+            passwrd.Parameters.Add("@user", SqlDbType.NVarChar);
+            passwrd.Parameters["@user"].Value = userNtxt.Text;
 
             try
             {
                 con.Open();
-                string username = usrNme.ExecuteScalar().ToString();
+                string usr = usrNme.ExecuteScalar().ToString();
 
-                if (username != null && String.Equals(username, userNtxt.Text))
+                if (usr != null && String.Equals(usr, userNtxt.Text))
                 {
-                    string password = passwrd.ExecuteScalar().ToString();
+                    string pwd = passwrd.ExecuteScalar().ToString();
 
-                    if (password != null && String.Equals(password, passtxt.Text))
+                    if (pwd != null && String.Equals(pwd, passtxt.Text))
                     {
-                        FormsAuthentication.SetAuthCookie(username, true);
+                        FormsAuthentication.SetAuthCookie(usr, true);
+                        notlogged.Visible = false;
+                        Session["LoggedUser"] = userNtxt.Text;
                         Response.Redirect("~/Home.aspx");
                         
                     }
+                  
                 }
                
-
             }
             catch (Exception ex)
             {
-
+                msgtxt.Text = "Incorrect username or password.";
             }
             finally
             {
                 con.Close();
             }
+        }
+       
+
+        protected void logout_Click(object sender, EventArgs e)
+        {
+            Session.Abandon();
+            FormsAuthentication.SignOut();
+            Response.Redirect("Home.aspx");
         }
     }
     }

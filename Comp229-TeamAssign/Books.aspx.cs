@@ -16,28 +16,43 @@ namespace Comp229_TeamAssign
         protected void Page_Load(object sender, EventArgs e)
         {
             displayloaneditem();
-            displaytrackitem();
+            displayitem();
+            Session["Currentpage"] = "~/Books.aspx";
         }
 
+        private void displayitem()
+        {
+
+            SqlCommand comm = new SqlCommand("Select * from[dbo].Books ", con);
+            con.Open();
+            SqlDataReader reader = comm.ExecuteReader();
+            if (reader.HasRows)
+            {
+                DataTable tabn = new DataTable();
+                tabn.Load(reader);
+                collection.DataSource = tabn;
+                collection.DataBind();
+
+            }
+            con.Close();
+
+        }
         private void displayloaneditem()
         {
 
-            SqlCommand comm = new SqlCommand("Select * from[dbo].Books where Status = 'Loaned' ", con);   
+            SqlCommand comm = new SqlCommand("Select * from[dbo].Books where Status = 'Loaned'  ", con);
             con.Open();
             SqlDataReader reader = comm.ExecuteReader();
-            Gviewtrack.DataSource = reader;
-            Gviewtrack.DataBind();
-            con.Close();
-        }
-        private void displaytrackitem()
-        {
+            if (reader.HasRows)
+            {
+                DataTable tabn = new DataTable();
+                tabn.Load(reader);
+                loanedcoll.DataSource = tabn;
+                loanedcoll.DataBind();
 
-            SqlCommand comm = new SqlCommand("Select * from[dbo].Books", con);
-            con.Open();
-            SqlDataReader reader = comm.ExecuteReader();
-            GviewOwnd.DataSource = reader;
-            GviewOwnd.DataBind();
+            }
             con.Close();
+
         }
     }
 }

@@ -13,21 +13,21 @@ namespace Comp229_TeamAssign {
     public partial class Books {
         
         /// <summary>
-        /// Gviewtrack control.
+        /// collection control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView Gviewtrack;
+        protected global::System.Web.UI.WebControls.Repeater collection;
         
         /// <summary>
-        /// GviewOwnd control.
+        /// loanedcoll control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GviewOwnd;
+        protected global::System.Web.UI.WebControls.Repeater loanedcoll;
     }
 }

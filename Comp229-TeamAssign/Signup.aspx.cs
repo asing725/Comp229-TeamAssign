@@ -22,8 +22,8 @@ namespace Comp229_TeamAssign
             try
             {
                 SqlConnection con = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Comp229TeamAssign;Integrated Security=True");
-                SqlCommand comm = new SqlCommand("Insert into [dbo].Member(LastName,FirstMidName,EmailAddress,Password) VALUES(@lName,@fmName,@email,@pwd)", con);
-              //  comm.Parameters.AddWithValue("@memID", etxt.Text);
+                SqlCommand comm = new SqlCommand("Insert into [dbo].Member(LastName,FirstName,Email,Password,UserName) VALUES(@lName,@fmName,@email,@pwd,@user)", con);
+               comm.Parameters.AddWithValue("@user", usrtxt.Text);
                 comm.Parameters.AddWithValue("@fmName", fntxt.Text);
                 comm.Parameters.AddWithValue("@lName", lntxt.Text);
                 comm.Parameters.AddWithValue("@email", etxt.Text);

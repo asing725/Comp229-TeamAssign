@@ -11,6 +11,11 @@
                     <div class="panel-body">
                         
                          <div class="form-group">
+                            <label class="control-label" >User Name:</label>
+                            <asp:TextBox runat="server"  CssClass="form-control" ID="usrtxt" placeholder="User Name" required="true" ></asp:TextBox>
+                        </div>
+
+                         <div class="form-group">
                             <label class="control-label" >Email:</label>
                             <asp:TextBox runat="server" TextMode="Email" CssClass="form-control" ID="etxt" placeholder="Email" required="true" ></asp:TextBox>
                         </div>
@@ -37,6 +42,8 @@
                             <asp:CompareValidator ErrorMessage="Your Passwords Must Match" Type="String" Operator="Equal"  ControlToValidate="cpasstxt" runat="server"
                                 ControlToCompare="passtxt" CssClass="label label-danger" />
                         </div>
+
+                      
 
                         <div class="text-right">
                             <asp:Button Text="Cancel" ID="CancelButton" runat="server" CssClass="btn btn-warning"  UseSubmitBehavior="false" CausesValidation="false" OnClick="CancelButton_Click" />
