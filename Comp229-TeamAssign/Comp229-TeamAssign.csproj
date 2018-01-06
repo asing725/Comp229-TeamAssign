@@ -145,6 +145,7 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Home.aspx" />
     <Content Include="ItemDetail.aspx" />
+    <Content Include="LoanPage.aspx" />
     <Content Include="Login.aspx" />
     <Content Include="Order.aspx" />
     <Content Include="Scripts\bootstrap.js" />
@@ -216,6 +217,13 @@
     </Compile>
     <Compile Include="ItemDetail.aspx.designer.cs">
       <DependentUpon>ItemDetail.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="LoanPage.aspx.cs">
+      <DependentUpon>LoanPage.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="LoanPage.aspx.designer.cs">
+      <DependentUpon>LoanPage.aspx</DependentUpon>
     </Compile>
     <Compile Include="Login.aspx.cs">
       <DependentUpon>Login.aspx</DependentUpon>

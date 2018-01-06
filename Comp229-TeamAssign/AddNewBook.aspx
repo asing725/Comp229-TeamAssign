@@ -6,9 +6,15 @@
         <asp:TextBox ID="ISBNTextBox" runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
+     <p>
+        Name :<br />
+        <asp:TextBox ID="nameTextBox" runat="server"  ErrorMessage="*"
+                            ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
+        </p>
+
     <p>
-        Author :<br />
-        <asp:TextBox ID="authorTextBox" runat="server"  ErrorMessage="*"
+        Description :<br />
+        <asp:TextBox ID="descriptionTextBox" runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add"/>
         </p>
    
@@ -18,18 +24,15 @@
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
      <p>
+
         Status :<br />
         <asp:TextBox ID="statusTextBox"  runat="server"  ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
      <p>
-        Publisher :<br />
-        <asp:TextBox ID="publisherTextBox"  runat="server"  ErrorMessage="*"
-                            ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
-        </p>
-     <p>
-        Publication Date :<br />
-        <asp:TextBox ID="publicationDateTextBox" TextMode="Date" runat="server"  ErrorMessage="*"
+
+        Date of Publication :<br />
+        <asp:TextBox ID="dateOfPublicationTextBox"  runat="server" TextMode="Date" ErrorMessage="*"
                             ForeColor="Red" Display="Dynamic" ValidationGroup="Add" />
         </p>
   
