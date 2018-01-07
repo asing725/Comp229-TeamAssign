@@ -12,10 +12,10 @@ namespace Comp229_TeamAssign
     {
         //Database Connection
         private SqlConnection sqlconnection = new SqlConnection("Data Source=(localdb)\\MSSQLLocalDB;Initial Catalog=Comp229TeamAssign;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=True;ApplicationIntent=ReadWrite;MultiSubnetFailover=False");
-        private String isbn, name,description, language, status, publisher;
+        private String isbn, name, description, language, status;
         private DateTime publicationDate;
-        private Image bookimage;
-       
+        private string bookimage, booklink;
+
 
         String insertQueryBooks;
         protected void Page_Load(object sender, EventArgs e)
@@ -32,37 +32,30 @@ namespace Comp229_TeamAssign
             language = languageTextBox.Text.ToString();
             status = statusTextBox.Text.ToString();
             publicationDate = Convert.ToDateTime(dateOfPublicationTextBox.Text.ToString());
+            bookimage = imagelnk.Text.ToString();
+            booklink = booklnk.Text.ToString();
 
-            insertQueryBooks = "INSERT INTO Books VALUES(@ISBN,@Name,@Description,@Status,@BookLanguage,@DateOfPublication)";
+            insertQueryBooks = "INSERT INTO Books(ISBN,Name,Description,Status,BookLanguage,DateOfPublication,image,link) VALUES(@ISBN,@Name,@Description,@Status,@BookLanguage,@DateOfPublication,@image,@link)";
 
-            try
-            {
-                sqlconnection.Open();
+            //Inserting data values in Books
+            sqlcommand = new SqlCommand(insertQueryBooks, sqlconnection);
+            sqlcommand.Parameters.AddWithValue("@ISBN", isbn);
+            sqlcommand.Parameters.AddWithValue("@Name", name);
+            sqlcommand.Parameters.AddWithValue("@Description", description);
+            sqlcommand.Parameters.AddWithValue("@Status", status);
+            sqlcommand.Parameters.AddWithValue("@BookLanguage", language);
+            sqlcommand.Parameters.AddWithValue("@DateOfPublication", publicationDate);
+            sqlcommand.Parameters.AddWithValue("@image", bookimage);
+            sqlcommand.Parameters.AddWithValue("@link", booklink);
+            sqlconnection.Open();
+            sqlcommand.ExecuteNonQuery();
 
-               
-                //Inserting data values in Books
-                sqlcommand = new SqlCommand(insertQueryBooks, sqlconnection);
-                sqlcommand.Parameters.AddWithValue("@ISBN", isbn);
-                sqlcommand.Parameters.AddWithValue("@Name", name);
-                sqlcommand.Parameters.AddWithValue("@Description", description);
-                sqlcommand.Parameters.AddWithValue("@Status", status);
-                sqlcommand.Parameters.AddWithValue("@BookLanguage", language);
-                sqlcommand.Parameters.AddWithValue("@DateOfPublication", publicationDate);
-                sqlcommand.ExecuteNonQuery();
 
-            }
-            catch (Exception ex)
-            {
-                Response.Write("Error retrieving user data: " + ex.Message);
-            }
-            finally
-            {
-                sqlconnection.Close();
-            }
+            sqlconnection.Close();
 
             Response.Redirect("~/Home.aspx");
-
         }
+
 
         protected void cancelAddNewBoook_Click(object sender, EventArgs e)
         {

@@ -31,13 +31,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox nameTextBox;
         
         /// <summary>
-        /// descriptionTextBox control.
+        /// statusTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox descriptionTextBox;
+        protected global::System.Web.UI.WebControls.TextBox statusTextBox;
         
         /// <summary>
         /// languageTextBox control.
@@ -49,13 +49,13 @@ namespace Comp229_TeamAssign {
         protected global::System.Web.UI.WebControls.TextBox languageTextBox;
         
         /// <summary>
-        /// statusTextBox control.
+        /// descriptionTextBox control.
         /// </summary>
         /// <remarks>
         /// Auto-generated field.
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox statusTextBox;
+        protected global::System.Web.UI.WebControls.TextBox descriptionTextBox;
         
         /// <summary>
         /// dateOfPublicationTextBox control.
@@ -65,6 +65,24 @@ namespace Comp229_TeamAssign {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.TextBox dateOfPublicationTextBox;
+        
+        /// <summary>
+        /// imagelnk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox imagelnk;
+        
+        /// <summary>
+        /// booklnk control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox booklnk;
         
         /// <summary>
         /// addNewBook control.

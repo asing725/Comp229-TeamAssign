@@ -36,6 +36,7 @@
                                 <tr>
                                     <td>Status:<small>
                                         <asp:Label runat="server" Text='<%# Eval("Status") %>'></asp:Label></small></td>
+                                        <asp:LinkButton Text="Click To Proceed" runat="server"></asp:LinkButton>
                                 </tr>
                                 <tr >
                                     <td >Summary:
