@@ -12,7 +12,7 @@
                     <h1 class="panel-title">Book Detail</h1>
                 </div>
                 <div class="col-sm-8">
-                    <asp:Repeater ID="bookdetail" runat="server">
+                    <asp:Repeater ID="bookdetail" runat="server" OnItemCommand="bookdetail_ItemCommand">
 
                         <ItemTemplate>
                             <table>
@@ -36,7 +36,7 @@
                                 <tr>
                                     <td>Status:<small>
                                         <asp:Label runat="server" Text='<%# Eval("Status") %>'></asp:Label></small></td>
-                                        <asp:LinkButton Text="Click To Proceed" runat="server"></asp:LinkButton>
+                                        <asp:LinkButton Text="Click To Proceed" CommandName="rentLink" CommandArgument='<%# Eval("Status") %>' runat="server"></asp:LinkButton>
                                 </tr>
                                 <tr >
                                     <td >Summary:

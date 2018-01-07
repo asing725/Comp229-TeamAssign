@@ -19,23 +19,9 @@ namespace Comp229_TeamAssign
 
         protected void Page_Load(object sender, EventArgs e)
         {
-            //Instantiating the link Button
-            rentLinkButton = new LinkButton();
-            rentLinkButton.ID = "rentLnButton";
-            rentLinkButton.Text="Rent";
-            rentLinkButton.CommandName = "rentCommandName";
-            rentLinkButton.CommandArgument = "rentCommandArgument";
-            rentLinkButton.Command += new CommandEventHandler(rentBook);
-            
-            
-            //Instantiation a panel and adding the link button on it to show on page
-            Panel addLnButtonPanel = new Panel();
-            addLnButtonPanel.Controls.Add(rentLinkButton);
 
             SqlCommand comm = new SqlCommand("SELECT * FROM Books WHERE Name = @bookname", con);
             comm.Parameters.AddWithValue("@bookname", Convert.ToString(Session["selectedBook"]));
-
-           
                 con.Open();
                 SqlDataReader reader = comm.ExecuteReader();
                 bookdetail.DataSource = reader;
@@ -49,8 +35,29 @@ namespace Comp229_TeamAssign
             
         }
 
+        protected void bookdetail_ItemCommand(object source, RepeaterCommandEventArgs e)
+        {
+            if (e.CommandName == "rentLink")
+            {
+                String status = e.CommandArgument.ToString();
+                if (status == "Available")
+                {
+
+                    //Instantiating the link Button
+                    rentLinkButton = new LinkButton();
+                    rentLinkButton.ID = "rentLnButton";
+                    rentLinkButton.Text = "Rent";
+                    rentLinkButton.CommandName = "rentCommandName";
+                    rentLinkButton.CommandArgument = "rentCommandArgument";
+                    rentLinkButton.Command += new CommandEventHandler(rentBook);
 
 
+                    //Instantiation a panel and adding the link button on it to show on page
+                    Panel addLnButtonPanel = new Panel();
+                    addLnButtonPanel.Controls.Add(rentLinkButton);
 
+                }
+            }
+        }
     }
     }
