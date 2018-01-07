@@ -5,7 +5,7 @@
         <div class="col-sm-9 ">
             <div class="panel panel-default">
                 <div class="panel-heading">
-                  <h1 class="panel-title">Our loaned collection </h1>
+                  <h1 class="panel-title">Add New Book </h1>
                 </div>
                 <div class="panel-body">
                      <div class="form-group">
@@ -43,5 +43,10 @@
 
        <asp:Button ID="addNewBook" runat="server" CssClass="btn btn-danger" Text="Add" OnClick="addNewBook_Click" />
         <asp:Button ID="cancelAddNewBoook" runat="server" CssClass="btn btn-warning" Text="Cancel" OnClick="cancelAddNewBoook_Click" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    
     
 </asp:Content>
