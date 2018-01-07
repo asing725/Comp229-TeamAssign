@@ -37,6 +37,8 @@ namespace Comp229_TeamAssign
 
         protected void bookdetail_ItemCommand(object source, RepeaterCommandEventArgs e)
         {
+
+            
             if (e.CommandName == "rentLink")
             {
                 String status = e.CommandArgument.ToString();
@@ -53,6 +55,7 @@ namespace Comp229_TeamAssign
 
 
                     //Instantiation a panel and adding the link button on it to show on page
+                    this.Form.Controls.Add(rentLinkButton);
                     Panel addLnButtonPanel = new Panel();
                     addLnButtonPanel.Controls.Add(rentLinkButton);
 
