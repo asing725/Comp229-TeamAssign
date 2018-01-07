@@ -31,6 +31,23 @@ namespace Comp229_TeamAssign
 
         protected void rentBook(object sender, CommandEventArgs e)
         {
+            //Reading BookID from database
+            SqlCommand getBookIdComm = new SqlCommand("SELECT BookID FROM Books WHERE Name = @bookname", con);
+            getBookIdComm.Parameters.AddWithValue("@bookname", Convert.ToString(Session["selectedBook"]));
+            con.Open();
+            SqlDataReader bookIdReader = getBookIdComm.ExecuteReader();
+            String bookId = bookIdReader["BookID"].ToString();
+            bookIdReader.Close();
+            //Reading MemberID from database
+            SqlCommand getMemberIdComm = new SqlCommand("SELECT MemberID FROM Books WHERE Name = @bookname", con);
+            getBookIdComm.Parameters.AddWithValue("@bookname", Convert.ToString(Session["selectedBook"]));
+            con.Open();
+            SqlDataReader reader = getBookIdComm.ExecuteReader();
+            String memberId = reader["MemberID"].ToString();
+            reader.Close();
+            //Sending MemberID and BookID to LoanPage
+            Session["MemberId"] = memberId;
+            Session["BookId"] = bookId;
             Response.Redirect("~/LoanPage.aspx");
             
         }
@@ -56,6 +73,7 @@ namespace Comp229_TeamAssign
 
                     //Instantiation a panel and adding the link button on it to show on page
                     this.Form.Controls.Add(rentLinkButton);
+                    //Confused here as link button was not getting displayed
                     Panel addLnButtonPanel = new Panel();
                     addLnButtonPanel.Controls.Add(rentLinkButton);
 
